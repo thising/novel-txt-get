@@ -12,12 +12,21 @@ if __name__ == "__main__":
     #logging.basicConfig(level=logging.DEBUG, format = "[%(asctime)s %(filename)s[%(lineno)d]:%(module)s:%(funcName)s %(levelname)s] %(message)s", datefmt = "%Y-%m-%d %H:%M:%S")
     logging.basicConfig(level=logging.DEBUG)
 
-    # settings
-    novel_name = '古人医'
+    # settings 古人医
+    #novel_name = '古人医'
+    #work_dir = '/tmp/'
+    #menu_url = 'http://www.baishulou.net/read/0/939/'
+    #menu_link_path = "//*[@id='defaulthtml4']/table//td/a"
+    #chapter_text_path = "//*[@id='content']/text()"
+    #encoding = 'gbk'
+    #timeout = 30
+
+    # settings 偷香
+    novel_name = '偷香'
     work_dir = '/tmp/'
-    menu_url = 'http://www.baishulou.net/read/0/939/'
-    menu_link_path = "//*[@id='defaulthtml4']/table//td/a"
-    chapter_text_path = "//*[@id='content']/text()"
+    menu_url = 'http://www.dajiadu.net/files/article/html/25/25375/'
+    menu_link_path = "//*[@id='booktext']//li/a"
+    chapter_text_path = "//*[@id='content1']/text()"
     encoding = 'gbk'
     timeout = 30
 
@@ -36,7 +45,7 @@ if __name__ == "__main__":
             try:
                 chapter_url = menu_url + link.get('href')
                 chapter_title = link.text
-                out_file.write('===%s===\n\n*source url:%s\n\n' % (chapter_title.encode('utf-8'), chapter_url))
+                out_file.write('===============\n%s\n===============\n*source url:%s\n\n' % (chapter_title.encode('utf-8'), chapter_url))
                 logging.info('Start to get <%s> from <%s> ...', chapter_title, chapter_url)
                 chapter_page = requests.get(chapter_url, timeout = timeout)
                 chapter_page.encoding = encoding
