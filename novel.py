@@ -22,11 +22,20 @@ if __name__ == "__main__":
     #timeout = 30
 
     # settings 偷香
-    novel_name = '偷香'
+    # novel_name = '偷香'
+    # work_dir = '/tmp/'
+    # menu_url = 'http://www.dajiadu.net/files/article/html/25/25375/'
+    # menu_link_path = "//*[@id='booktext']//li/a"
+    # chapter_text_path = "//*[@id='content1']/text()"
+    # encoding = 'gbk'
+    # timeout = 30
+
+    # settings 都市极品风水师
+    novel_name = '都市极品风水师'
     work_dir = '/tmp/'
-    menu_url = 'http://www.dajiadu.net/files/article/html/25/25375/'
-    menu_link_path = "//*[@id='booktext']//li/a"
-    chapter_text_path = "//*[@id='content1']/text()"
+    menu_url = 'http://www.piaotian.com/html/5/5350/'
+    menu_link_path = "/html/body/div[4]/div[1]/div[2]/ul/li/a"
+    chapter_text_path = "/html/body//text()"
     encoding = 'gbk'
     timeout = 30
 
